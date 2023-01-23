@@ -23,4 +23,5 @@ module.exports = {
     bufferutil: 'bufferutil',
     'utf-8-validate': 'utf-8-validate',
   },
+  plugins: [new (require('webpack').ExternalsPlugin)('commonjs', ['@nut-tree/nut-js'])],
 };
