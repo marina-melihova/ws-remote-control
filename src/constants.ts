@@ -9,3 +9,5 @@ export const enum Commands {
   DRAW_RECT = 'draw_rectangle',
   PRINT_SC = 'prnt_scrn',
 }
+
+export const SIZE_SC = 200;

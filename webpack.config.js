@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.ts',
@@ -23,5 +24,8 @@ module.exports = {
     bufferutil: 'bufferutil',
     'utf-8-validate': 'utf-8-validate',
   },
-  plugins: [new (require('webpack').ExternalsPlugin)('commonjs', ['@nut-tree/nut-js'])],
+  plugins: [
+    new webpack.ExternalsPlugin('commonjs', ['@nut-tree/nut-js']),
+    new webpack.DefinePlugin({ 'process.browser': 'true' }),
+  ],
 };
