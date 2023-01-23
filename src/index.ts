@@ -20,7 +20,6 @@ const mapActions = {
 const port = +process.env.PORT || 8080;
 
 const wss = new WebSocketServer({ port });
-
 console.log(`Web Socket Server started on port ${wss.options.port}`);
 
 wss.on('connection', (ws, req) => {
@@ -36,8 +35,8 @@ wss.on('connection', (ws, req) => {
     if (command in mapActions) {
       try {
         const response = await mapActions[command](args);
-        console.log(`Command ${command} was completed successfully`);
         duplex.write(response);
+        console.log(`Command ${command} was completed successfully`);
       } catch (err: any) {
         console.error(`Command ${command} was failed with error => ${err.message}`);
       }
@@ -60,11 +59,7 @@ wss.on('close', () => {
 for (const signal of ['SIGINT', 'SIGTERM']) {
   process.on(signal, () => {
     console.log(signal);
-
-    // Close all clients gracefully.
     for (const client of wss.clients) client.close();
-
-    // Stop accepting new connections.
     wss.close();
   });
 }

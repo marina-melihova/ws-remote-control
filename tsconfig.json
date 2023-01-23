@@ -9,7 +9,8 @@
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true
   },
   "exclude": ["node_modules", "tests", "dist", "**/*spec.ts"],
   "include": ["src"]
