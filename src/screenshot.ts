@@ -10,7 +10,6 @@ export const getScreenshot = async () => {
   const image = new Jimp(imageRaw.width, imageRaw.height);
   image.bitmap.data = imageRGB.data;
   const imageBase64 = await image.getBase64Async(Jimp.MIME_PNG);
-  console.log('imageBase64 :>> ', imageBase64);
   const result = imageBase64.slice(imageBase64.indexOf(',') + 1);
   return `${Commands.PRINT_SC} ${result}`;
 };
