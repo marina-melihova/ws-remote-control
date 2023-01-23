@@ -1,0 +1,37 @@
+{
+  "name": "ws-remote-control",
+  "version": "1.0.0",
+  "description": "Remote control backend using nutjs.dev library and websocket",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production npm run build && node --no-deprecation ./dist/bundle.js",
+    "start:dev": "cross-env NODE_ENV=development nodemon",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marina-melihova/ws-remote-control.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/marina-melihova/ws-remote-control#readme",
+  "dependencies": {
+    "@nut-tree/nut-js": "^3.0.0",
+    "dotenv": "^16.0.3",
+    "jimp": "^0.16.2",
+    "ws": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/webpack": "^5.28.0",
+    "@types/ws": "^8.5.4",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.20",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
